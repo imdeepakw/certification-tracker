@@ -12,3 +12,4 @@ router.put('/:id', certificateControllers.updateCertificate)
 router.delete('/:id', certificateControllers.deleteCertificate)
 
 
+module.exports = router
