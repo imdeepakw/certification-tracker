@@ -1,4 +1,4 @@
-
+const Certificate = require('../models/Certificate')
 
 module.exports = {
     getAllCertificates: async () => {
@@ -14,6 +14,6 @@ module.exports = {
 
     }, 
     deleteCertificate: async () => {
-        
+
     }
 }
