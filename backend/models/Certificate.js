@@ -20,5 +20,13 @@ const certificateSchema = new mongoose.Schema({
     category: {
         type: String, 
         required: true
+    }, 
+    expiresInDays: {
+        type: Number, 
+        required: true
     }
 })
+
+const Certificate = mongoose.model('Certificate', certificateSchema)
+
+module.exports = Certificate
