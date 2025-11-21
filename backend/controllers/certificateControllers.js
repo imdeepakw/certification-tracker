@@ -3,7 +3,12 @@ const Certificate = require('../models/Certificate')
 
 module.exports = {
     getAllCertificates: async (req, res) => {
-
+        try {
+            const allCerts = await Certificate.find()
+            res.status(200).json(allCerts)
+        } catch (error) {
+            console.error("Error in the get All Certificates controller", error)
+        }
     }, 
     getCertificate: async (req, res) => {
 
