@@ -7,11 +7,17 @@ module.exports = {
             const allCerts = await Certificate.find()
             res.status(200).json(allCerts)
         } catch (error) {
-            console.error("Error in the get All Certificates controller", error)
+            console.error("Error in the getAllCertificates controller", error)
         }
     }, 
     getCertificate: async (req, res) => {
-
+        try {
+            console.log(req.params.id)
+            const certificate = await Certificate.findById(req.params.id)
+            res.status(200).json(certificate)
+        } catch (error) {
+            console.error("Error in the getCertificate controller", error)
+        }
     }, 
     createCertificate: async (req, res) => {
         try {
