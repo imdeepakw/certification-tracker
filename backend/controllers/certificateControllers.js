@@ -34,7 +34,15 @@ module.exports = {
         }
     }, 
     updateCertificate: async (req, res) => {
-
+        try {
+            const updatedCert = await Certificate.findByIdAndUpdate(req.params.id, {
+                ...req.body, 
+                expiresInDays: calculateDays(req.body.expirationDate)
+            }, {new: true})            
+            res.json(updatedCert)
+        } catch (error) {
+            console.error("Error occured in updateCertificate controller")
+        }
     }, 
     deleteCertificate: async (req, res) => {
 
