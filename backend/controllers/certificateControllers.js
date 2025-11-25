@@ -45,6 +45,11 @@ module.exports = {
         }
     }, 
     deleteCertificate: async (req, res) => {
-
+        try {
+            const deleteCertificate = await Certificate.findByIdAndDelete(req.params.id)
+            res.json({message: "Certificate deleted sucessfully"})
+        } catch (error) {
+            console.error("Error occured in deleteCertificate controller.")
+        }
     }
 }
