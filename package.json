@@ -1,0 +1,24 @@
+{
+  "name": "certification-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon backend/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imdeepakw/certification-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/imdeepakw/certification-tracker/issues"
+  },
+  "homepage": "https://github.com/imdeepakw/certification-tracker#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
