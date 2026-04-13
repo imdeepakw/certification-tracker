@@ -1,17 +1,19 @@
 import 'dotenv/config'
 import express from "express";
 import connectDB from './config/db.js';
-
+import authRoutes from './routes/authRoutes.js';
+import cookieParser from 'cookie-parser';
 
 const app = express()
 connectDB()
 
 
 app.use(express.json())
+app.use(cookieParser()) 
 
-app.get('/', (req, res) => {
-    res.send('whatssap')
-})
+
+app.use('/api/auth', authRoutes)
+
 
 app.listen(process.env.PORT, () =>{
     console.log(`Server is running on port ${process.env.PORT}`)
